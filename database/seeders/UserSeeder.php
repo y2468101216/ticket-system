@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        User::create([
+            'name' => 'rd',
+            'password' => Hash::make(123),
+            'type' => 0
+        ]);
+
+        User::create([
+            'name' => 'qa',
+            'password' => Hash::make(123),
+            'type' => 1
+        ]);
+    }
+}
