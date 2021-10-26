@@ -57,8 +57,6 @@ class TicketController extends Controller
             'type' => $request->type,
             'name' => $request->name,
         ]);
-
-        return response()->json($ticket);
     }
 
     public function resolve(Request $request, $id)
@@ -72,8 +70,6 @@ class TicketController extends Controller
         $ticket = Ticket::where('id', $id)->update([
             'status' => self::STATUS['RESOLVE'],
         ]);
-
-        return response()->json($ticket);
     }
 
     public function delete(Request $request, $id)
